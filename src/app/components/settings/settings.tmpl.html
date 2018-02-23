@@ -1,0 +1,13 @@
+<div class="d-flex flex-wrap justify-content-center settings-container">
+  <div class="col-12 align-middle settings-header">
+    {{settings.currentDictionaryName ? settings.currentDictionaryName : 'Основные справочники системы'}}
+  </div>
+  <div class="card settings-card text-center justify-content-center"
+       ng-repeat="dict in settings.dictionaryList"
+       ng-click="settings.openDictionary(dict)"
+       role="button">
+      {{dict.name}}
+  </div>
+
+</div>
+<div ui-view="dict"></div>

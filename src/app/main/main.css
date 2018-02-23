@@ -1,0 +1,96 @@
+html{
+  overflow: hidden;
+  -moz-user-select: none;
+  cursor: default;
+
+}
+
+div{
+  user-select: none !important;
+}
+.metodist-navbar{
+  background-color: rgba(175,217,238,0.5);
+  width: 100%;
+  height: 45px;
+  margin: 0;
+}
+.metodist-navbar-top{
+  border-bottom: 1px solid #aaaaaa;
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.6);
+}
+.metodist-navbar-bottom{
+  border-top: 1px solid #aaaaaa;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0,0,0,0.6);
+  text-align: end;
+}
+.application-main-icon{
+  width: 24px;
+  height: 24px;
+}
+.application-title{
+  margin-left: 6px;
+}
+.main-sidenav{
+  width: 96px;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  padding-top: 1px;
+  height: calc(100% - 90px);
+  border-right: 1px solid #aaaaaa;
+  background-color: rgba(175,217,238,0.5);
+}
+
+.main-content{
+  overflow-y: scroll;
+  overflow-x: auto;
+  position: absolute;
+  top: 45px;
+  left: 96px;
+  width: calc(100% - 96px);
+  height: calc(100% - 90px);
+  min-height: calc(100% - 90px);
+  max-height: calc(100% - 90px);
+}
+
+.perspective-button{
+  margin: 1px 3px;
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  border: 1px solid #aaaaaa;
+
+}
+.perspective-button-image{
+  width: 48px;
+  height: 48px;
+}
+.perspective-button-name{
+  font-size: 11px;
+  font-weight: 400;
+}
+.selected-main-button{
+  border: 3px solid darkgreen;
+}
+.common-add-button{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+button.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+button.btn-primary:focus {
+  box-shadow: none;
+}
+
+

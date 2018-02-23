@@ -1,0 +1,31 @@
+<div class="container entity-container">
+  <div class="col-md=12">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Таб.№</th>
+          <th>ФИО</th>
+          <th>Дата рождения</th>
+          <th>Категория</th>
+          <th>Ближайшая аттестация</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr ng-repeat="emp in employees.employeesList">
+            <td>{{emp.tabNumber}}</td>
+            <td>{{emp.fullName}}</td>
+            <td>{{emp.birthdate | date:'dd.MM.yyyy'}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<button class="btn btn-primary common-add-button"
+        ng-click="employees.addEmployee()">
+  <i class="fa fa-plus" aria-hidden="true"></i>
+</button>
+
+<div ui-view="lobby"></div>

@@ -1,0 +1,72 @@
+<div  class="dictionary-modal">
+  <div>
+    <div class="modal-header col-12 settings-header" >
+      <span>Категории сотрудников</span>
+      <button class="modal-close-button"
+              ng-if="!categories.editMode"
+              ng-click="categories.close()">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="col-12">
+      <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+          <th width="40">Краткое наименование</th>
+          <th width="40">Полное наименование</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in categories.list"
+              class="editable-table-categories"
+              ng-mouseleave="row.actionVisible = false;"
+              ng-mouseover="row.actionVisible = true;">
+            <td width="40%" ng-if="row.id != categories.editedItem.id">{{row.typeName}}</td>
+            <td width="40%" ng-if="row.id == categories.editedItem.id">
+              <input ng-model="row.typeName" value="row.typeName" required>
+            </td>
+            <td width="40%" ng-if="row.id != categories.editedItem.id">{{row.textTypeName}}</td>
+            <td width="40%" ng-if="row.id == categories.editedItem.id">
+              <input ng-model="row.textTypeName" value="row.textTypeName" required>
+            </td>
+            <td class="td-actions">
+              <div class="table-actions">
+                <img class="table-action"
+                     ng-if="!categories.editMode"
+                     ng-class="{'visible-table-action' : row.actionVisible}"
+                     role="button"
+                     src="../../../../assets/images/edit.png"
+                     ng-click="categories.editItem(row)"/>
+                <img class="table-action"
+                     ng-if="!categories.editMode"
+                     ng-class="{'visible-table-action' : row.actionVisible}"
+                     role="button"
+                     src="../../../../assets/images/trash.png"
+                     ng-click="categories.deleteItem(row)"/>
+                <img class="table-action"
+                     ng-class="{'visible-table-action' : row.id == categories.editedItem.id}"
+                     ng-if="categories.editMode"
+                     role="button"
+                     src="../../../../assets/images/commit.png"
+                     ng-click="categories.saveItem(row)"/>
+                <img class="table-action"
+                     ng-class="{'visible-table-action' : row.id == categories.editedItem.id}"
+                     ng-if="categories.editMode"
+                     role="button"
+                     src="../../../../assets/images/cancel.png"
+                     ng-click="categories.cancelEditItem(row)"/>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button class="btn btn-primary modal-add-button"
+          ng-click="categories.addItem()">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+</div>
+
